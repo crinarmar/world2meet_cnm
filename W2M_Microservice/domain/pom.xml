@@ -4,14 +4,14 @@
   
   	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.dekra.service</groupId>
-		<artifactId>dekra-service</artifactId>
+		<groupId>com.W2M.service</groupId>
+		<artifactId>W2M-service</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
    	
   
-  	<artifactId>dekra-service-domain</artifactId>
-    <name>dekra-service-domain</name>
+  	<artifactId>W2M-service-domain</artifactId>
+    <name>W2M-service-domain</name>
     <description>Capa dominio (DDD)</description>
     
 	<dependencies>

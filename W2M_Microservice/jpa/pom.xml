@@ -4,14 +4,14 @@
   
   	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.dekra.service</groupId>
-		<artifactId>dekra-service</artifactId>
+		<groupId>com.W2M.service</groupId>
+		<artifactId>W2M-service</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
    	
   
-  	<artifactId>dekra-service-jpa</artifactId>
-    <name>dekra-service-jpa</name>
+  	<artifactId>W2M-service-jpa</artifactId>
+    <name>W2M-service-jpa</name>
     <description>Capa de infraestructura: JPA</description>
     
 	<dependencies>
@@ -23,7 +23,7 @@
 	
     	<dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>dekra-service-domain</artifactId>
+            <artifactId>W2M-service-domain</artifactId>
             <version>${project.version}</version>
         </dependency>
         

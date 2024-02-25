@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   
 	<parent>
-		<groupId>com.dekra.service</groupId>
-		<artifactId>dekra-service</artifactId>
+		<groupId>com.W2M.service</groupId>
+		<artifactId>W2M-service</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
   
-	<artifactId>dekra-service-boot</artifactId>
-	<name>dekra-service-boot</name>
+	<artifactId>W2M-service-boot</artifactId>
+	<name>W2M-service-boot</name>
 	<description>Capa de arranque: BOOT</description>
 	
 	<dependencies>
@@ -28,25 +28,25 @@
 		
 		<dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>dekra-service-jpa</artifactId>
+            <artifactId>W2M-service-jpa</artifactId>
             <version>${project.version}</version>
         </dependency>
         
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>dekra-service-application</artifactId>
+            <artifactId>W2M-service-application</artifactId>
             <version>${project.version}</version>
         </dependency>
 	
 		<dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>dekra-service-domain</artifactId>
+            <artifactId>W2M-service-domain</artifactId>
             <version>${project.version}</version>
         </dependency>
         
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>dekra-service-rest</artifactId>
+            <artifactId>W2M-service-rest</artifactId>
             <version>${project.version}</version>
         </dependency>
         
