@@ -11,7 +11,7 @@ public class DeleteSpacecraftImpl implements DeleteSpacecraft {
 	private final SearchSpacecraft searchSpacecraft;
 	private final SpacecraftRepository spacecraftRepository;
 
-	private DeleteSpacecraftImpl(SearchSpacecraft searchSpacecraft, SpacecraftRepository spacecraftRepository) {
+	public DeleteSpacecraftImpl(SearchSpacecraft searchSpacecraft, SpacecraftRepository spacecraftRepository) {
 		this.searchSpacecraft = searchSpacecraft;
 		this.spacecraftRepository = spacecraftRepository;
 	}
@@ -23,8 +23,8 @@ public class DeleteSpacecraftImpl implements DeleteSpacecraft {
 	}
 
 	@Override
-	public void deleteSpacecraft(Spacecraft product) {
-		this.spacecraftRepository.delete(product);
+	public void deleteSpacecraft(Spacecraft spacecraft) {
+		this.spacecraftRepository.delete(spacecraft);
 
 	}
 }

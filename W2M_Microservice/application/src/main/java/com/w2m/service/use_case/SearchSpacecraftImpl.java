@@ -16,19 +16,19 @@ public class SearchSpacecraftImpl implements SearchSpacecraft {
 
 	private final SpacecraftRepository spacecraftRepository;
 
-	private SearchSpacecraftImpl(SpacecraftRepository spacecraftRepository) {
+	public SearchSpacecraftImpl(SpacecraftRepository spacecraftRepository) {
 		this.spacecraftRepository = spacecraftRepository;
 	}
 
 	@Override
 	public Spacecraft searchSpacecraftById(Long id) {
-		final Optional<Spacecraft> optionalSpacecraft = this.spacecraftRepository.findById(id);
+		Optional<Spacecraft> optionalSpacecraft = this.spacecraftRepository.findById(id);
 
 		if (optionalSpacecraft.isEmpty()) {
 			throw new SpacecraftNotFoundException();
 		}
 
-		final Spacecraft spacecraft = optionalSpacecraft.get();
+		Spacecraft spacecraft = optionalSpacecraft.get();
 		return spacecraft;
 	}
 
@@ -39,7 +39,7 @@ public class SearchSpacecraftImpl implements SearchSpacecraft {
 	}
 
 	@Override
-	public Collection<Spacecraft> searchSpacecraftByFilter(String name, String description, Double price) {
+	public Collection<Spacecraft> searchSpacecraftByFilter(String name) {
 		return this.spacecraftRepository.findBy(new SpacecraftCriteria(name)).stream().collect(Collectors.toList());
 
 	}

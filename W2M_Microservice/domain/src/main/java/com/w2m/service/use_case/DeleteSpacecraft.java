@@ -6,5 +6,5 @@ public interface DeleteSpacecraft {
 
 	void deleteSpacecraft(Long id);
 
-	void deleteSpacecraft(Spacecraft product);
+	void deleteSpacecraft(Spacecraft spacecraft);
 }

@@ -11,7 +11,7 @@ public class UpdateSpacecraftImpl implements UpdateSpacecraft {
 	private final SearchSpacecraft searchSpacecraft;
 	private final SpacecraftRepository spacecraftRepository;
 
-	private UpdateSpacecraftImpl(SearchSpacecraft searchSpacecraft, SpacecraftRepository spacecraftRepository) {
+	public UpdateSpacecraftImpl(SearchSpacecraft searchSpacecraft, SpacecraftRepository spacecraftRepository) {
 		this.searchSpacecraft = searchSpacecraft;
 		this.spacecraftRepository = spacecraftRepository;
 	}

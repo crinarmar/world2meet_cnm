@@ -9,6 +9,6 @@ public interface SearchSpacecraft {
 
 	Collection<Spacecraft> searchAllSpacecraft();
 
-	Collection<Spacecraft> searchSpacecraftByFilter(String name, String description, Double price);
+	Collection<Spacecraft> searchSpacecraftByFilter(String name);
 
 }

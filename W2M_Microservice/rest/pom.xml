@@ -63,8 +63,8 @@
 							<generateModelDocumentation>false</generateModelDocumentation>
 							<generateApiTests>true</generateApiTests>
 							<generateApiDocumentation>false</generateApiDocumentation>
- 							<apiPackage>com.W2M.service.rest.interfaces.product</apiPackage>
-                			<modelPackage>com.W2M.service.rest.interfaces.product.dto</modelPackage>                			
+ 							<apiPackage>com.W2M.service.rest.interfaces.spacecraft</apiPackage>
+                			<modelPackage>com.W2M.service.rest.interfaces.spacecraft.dto</modelPackage>                			
                 			<configOptions>
 								<useSpringBoot3>true</useSpringBoot3>
 								<booleanGetterPrefix>is</booleanGetterPrefix>

@@ -7,7 +7,7 @@ import java.util.Objects;
 
 import org.springframework.stereotype.Component;
 
-import com.W2M.service.rest.interfaces.product.dto.SpacecraftRest;
+import com.W2M.service.rest.interfaces.spacecraft.dto.SpaceCraftRest;
 import com.w2m.service.Spacecraft;
 
 /**
@@ -16,20 +16,20 @@ import com.w2m.service.Spacecraft;
  */
 @Component
 public class SpacecraftRestMapper {
-	public SpacecraftRest mapTo(Spacecraft source) {
+	public SpaceCraftRest mapTo(Spacecraft source) {
 		Objects.requireNonNull(source);
-		final SpacecraftRest SpacecraftRest = new SpacecraftRest(source.getId(), source.getName());
+		final SpaceCraftRest SpacecraftRest = new SpaceCraftRest(source.getId(), source.getName());
 		return SpacecraftRest;
 	}
 
-	public List<SpacecraftRest> mapTo(Collection<Spacecraft> source) {
+	public List<SpaceCraftRest> mapTo(Collection<Spacecraft> source) {
 		Objects.requireNonNull(source);
-		final List<SpacecraftRest> destinyCollection = new ArrayList<>();
+		final List<SpaceCraftRest> destinyCollection = new ArrayList<>();
 		source.forEach(sourcePrice -> destinyCollection.add(this.mapTo(sourcePrice)));
 		return destinyCollection;
 	}
 
-	public Spacecraft mapReverse(SpacecraftRest source) {
+	public Spacecraft mapReverse(SpaceCraftRest source) {
 		Objects.requireNonNull(source);
 		return Spacecraft.maker().id(source.getId()).name(source.getName()).build();
 	}

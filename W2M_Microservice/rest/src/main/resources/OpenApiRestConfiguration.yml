@@ -1,23 +1,23 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: Dekra Swagger Product
+  title: Dekra Swagger SpaceCraft
   license:
     name: MIT
 servers:
   - url: http://localhost:8080/api/v1
 paths:
-  /productos:
+  /naves:
     get:
-      summary: List all product
-      operationId: listProducts
+      summary: List all spaceCraft
+      operationId: listSpaceCrafts
       responses:
         '200':
-          description: All Products
+          description: All SpaceCrafts
           content:
             application/json:    
               schema:
-                $ref: "#/components/schemas/ProductCollectionRest"
+                $ref: "#/components/schemas/SpaceCraftCollectionRest"
         default:
           description: unexpected error
           content:
@@ -25,36 +25,36 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
     post:
-      summary: create a product
-      operationId: createProduct
+      summary: create a spaceCraft
+      operationId: createSpaceCraft
       requestBody:
         required: true
         content:
            application/json:
               schema:
-                $ref: "#/components/schemas/ProductRest"
+                $ref: "#/components/schemas/SpaceCraftRest"
       responses:
         '201':
           description: Created
-  /productos/{id}:
+  /naves/{id}:
     get:
-      summary: Find a specific product
-      operationId: findProductById
+      summary: Find a specific spaceCraft
+      operationId: findSpaceCraftById
       parameters:
         - name: id
           in: path
-          description: unique product identification
+          description: unique spaceCraft identification
           required: true
           schema:
            type: integer
            format: int64
       responses:
         '200':
-          description: Product selected
+          description: SpaceCraft selected
           content:
             application/json:    
               schema:
-                $ref: "#/components/schemas/ProductRest"
+                $ref: "#/components/schemas/SpaceCraftRest"
         default:
           description: unexpected error
           content:
@@ -62,12 +62,12 @@ paths:
               schema:
                 $ref: "#/components/schemas/Error"
     put:
-      summary: update a exist product
-      operationId: updateProduct
+      summary: update a exist spaceCraft
+      operationId: updateSpaceCraft
       parameters:
         - name: id
           in: path
-          description: unique product identification
+          description: unique spaceCraft identification
           required: true
           schema:
            type: integer
@@ -77,17 +77,17 @@ paths:
         content:
            application/json:
               schema:
-                $ref: "#/components/schemas/ProductRest"
+                $ref: "#/components/schemas/SpaceCraftRest"
       responses:
         '201':
           description: Modified
     delete:
-      summary: Delete a specific product
-      operationId: deleteProductById
+      summary: Delete a specific spaceCraft
+      operationId: deleteSpaceCraftById
       parameters:
         - name: id
           in: path
-          description: unique product identification
+          description: unique spaceCraft identification
           required: true
           schema:
            type: integer
@@ -95,37 +95,24 @@ paths:
       responses:
         '202':
           description: Accepted
-  /productos/find:
+  /naves/find:
     get:
-      summary: List products by filter
-      operationId: listProductsByFilter
+      summary: List spaceCraft by filter
+      operationId: listSpaceCraftsByFilter
       parameters:
         - name: name
           in: query
-          description: name product
+          description: name spaceCraft
           required: false
           schema:
            type: string
-        - name: description
-          in: query
-          description: description product
-          required: false
-          schema:
-           type: string
-        - name: price
-          in: query
-          description: price product
-          required: false
-          schema:
-           type: number
-           format: double
       responses:
         '200':
-          description: Products
+          description: SpaceCrafts
           content:
             application/json:    
               schema:
-                $ref: "#/components/schemas/ProductCollectionRest"
+                $ref: "#/components/schemas/SpaceCraftCollectionRest"
         default:
           description: unexpected error
           content:
@@ -134,35 +121,22 @@ paths:
                 $ref: "#/components/schemas/Error"
 components:
   schemas:
-    ProductRest:
+    SpaceCraftRest:
       type: object
       required:
         - id
         - name
-        - description
-        - price
       properties:
         id:
           type: integer
           format: int64
         name:
-          type: string
-        description:
-          type: string     
-        price:
-          type: number
-          format: double
-        tax:
-          type: number
-          format: double
-        totalPrice:
-          type: number
-          format: double
-    ProductCollectionRest:
+          type: string  
+    SpaceCraftCollectionRest:
       type: array
       maxItems: 100
       items:
-        $ref: "#/components/schemas/ProductRest"
+        $ref: "#/components/schemas/SpaceCraftRest"
     Error:
       type: object
       required:

@@ -1,9 +1,7 @@
 package com.w2m.service;
 
-import lombok.Builder;
 import lombok.Getter;
 
-@Builder(builderMethodName = "maker")
 @Getter
 public class Spacecraft {
 	private Long id;
