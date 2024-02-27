@@ -18,7 +18,7 @@ paths:
             application/json:    
               schema:
                 $ref: "#/components/schemas/SpaceCraftCollectionRest"
-        default:
+        'default':
           description: unexpected error
           content:
             application/json:

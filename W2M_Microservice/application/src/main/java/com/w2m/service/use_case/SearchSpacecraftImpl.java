@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.w2m.service.Spacecraft;
@@ -21,6 +22,7 @@ public class SearchSpacecraftImpl implements SearchSpacecraft {
 	}
 
 	@Override
+	@Cacheable(value = "spacecraftCache", key = "#id")
 	public Spacecraft searchSpacecraftById(Long id) {
 		Optional<Spacecraft> optionalSpacecraft = this.spacecraftRepository.findById(id);
 
@@ -34,6 +36,7 @@ public class SearchSpacecraftImpl implements SearchSpacecraft {
 
 	@Override
 	public Collection<Spacecraft> searchAllSpacecraft() {
+
 		return this.spacecraftRepository.findAll().stream().collect(Collectors.toList());
 
 	}

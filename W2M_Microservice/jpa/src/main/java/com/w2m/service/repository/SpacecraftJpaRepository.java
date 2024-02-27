@@ -72,4 +72,5 @@ public class SpacecraftJpaRepository implements SpacecraftRepository {
 
 		return specification;
 	}
+
 }

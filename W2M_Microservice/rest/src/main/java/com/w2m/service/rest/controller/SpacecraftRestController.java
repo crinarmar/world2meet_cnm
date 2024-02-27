@@ -16,7 +16,6 @@ import com.w2m.service.use_case.SearchSpacecraft;
 import com.w2m.service.use_case.UpdateSpacecraft;
 
 @RestController
-
 public class SpacecraftRestController implements NavesApi {
 	private final SearchSpacecraft searchSpacecraft;
 	private final CreateSpacecraft createSpacecraft;
@@ -38,6 +37,7 @@ public class SpacecraftRestController implements NavesApi {
 	@Override
 	public ResponseEntity<List<SpaceCraftRest>> listSpaceCrafts() {
 		return ResponseEntity.ok(this.mapper.mapTo(this.searchSpacecraft.searchAllSpacecraft()));
+
 	}
 
 	@Override
